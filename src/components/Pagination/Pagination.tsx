@@ -11,7 +11,7 @@ const ReactPaginate = (
   >
 ).default;
 
-interface ReactPaginationProps {
+interface PaginationProps {
   totalPages: number;
   page: number;
   onPageChange: (nextPage: number) => void;
@@ -21,7 +21,7 @@ export default function Pagination({
   totalPages,
   page,
   onPageChange,
-}: ReactPaginationProps) {
+}: PaginationProps) {
   return (
     <ReactPaginate
       pageCount={totalPages}

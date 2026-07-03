@@ -2,10 +2,7 @@ import axios from "axios";
 import type { Note } from "../types/note.ts";
 interface FetchNotesResponse {
   notes: Note[];
-  page: number;
-  per_page: number;
   totalPages: number;
-  totalItems: number;
 }
 const token = import.meta.env.VITE_NOTEHUB_TOKEN;
 export const fetchNotes = async (
