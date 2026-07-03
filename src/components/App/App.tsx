@@ -55,9 +55,7 @@ function App() {
           Create note +
         </button>
       </header>
-      {data && data.notes.length > 0 && (
-        <NoteList notes={data.notes} onSelect={() => {}} />
-      )}
+      {data && data.notes.length > 0 && <NoteList notes={data.notes} />}
       {isModalOpen && (
         <Modal onClose={() => setIsModalOpen(false)}>
           <NoteForm onClose={() => setIsModalOpen(false)} />
