@@ -11,15 +11,15 @@ const token = import.meta.env.VITE_NOTEHUB_TOKEN;
 export const fetchNotes = async (
   query: string,
   page: number,
-  per_page: number,
+  perPage: number,
 ): Promise<FetchNotesResponse> => {
   const response = await axios.get<FetchNotesResponse>(
     "https://notehub-public.goit.study/api/notes",
     {
       params: {
-        query,
+        search: query,
         page,
-        per_page,
+        perPage,
       },
       headers: {
         Authorization: `Bearer ${token}`,

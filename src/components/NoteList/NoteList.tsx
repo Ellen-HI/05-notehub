@@ -5,7 +5,7 @@ interface NoteListProps {
   onDelete: (id: string) => void;
   notes: Note[];
 }
-export default function NoteList({ onSelect, notes }: NoteListProps) {
+export default function NoteList({ onSelect, onDelete, notes }: NoteListProps) {
   return (
     <ul className={css.list}>
       {notes.map((note) => (
@@ -20,8 +20,8 @@ export default function NoteList({ onSelect, notes }: NoteListProps) {
             <span className={css.tag}>{note.tag}</span>
             <button
               className={css.button}
-              onClick={(e) => {
-                e.stopPropagation();
+              onClick={(event) => {
+                event.stopPropagation();
                 onDelete(note.id);
               }}
             >
